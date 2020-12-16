@@ -51,6 +51,14 @@ export class HomePage {
       quantity: 1
     });
   }
+
+  dropItem(event) {
+    console.log('event', event);
+  }
+
+  dragEnd(event) {
+    console.log('Element was dragged', event);
+  }
   
 
   get cartItemsLength() {

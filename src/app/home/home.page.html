@@ -8,7 +8,7 @@
 
 <ion-content [fullscreen]="true">
   
-  <div class="cart-container">
+  <div class="cart-container" mwlDroppable (drop)="addItem($event.dropData)">
     <ion-icon name="cart" (click)="isCartOpened = !isCartOpened"></ion-icon>
     <ion-badge color="primary">{{cartItemsLength}}</ion-badge>
     <span class="amount">
@@ -26,7 +26,7 @@
     <ion-grid>
       <ion-row>
         <ion-col size="3" *ngFor="let item of listItems">
-          <div class="image-container">
+          <div class="image-container" mwlDraggable [dropData]="item">
             <img [src]="item.image" class="list-item-img">
             <ion-icon name="add-circle" (click)="addItem(item)"></ion-icon>
           </div>

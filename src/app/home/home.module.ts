@@ -6,6 +6,7 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { CartItemComponent } from './components/cart-item/cart-item.component';
+import { DragAndDropModule } from 'angular-draggable-droppable';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { CartItemComponent } from './components/cart-item/cart-item.component';
     CommonModule,
     FormsModule,
     IonicModule,
+    DragAndDropModule,
     HomePageRoutingModule
   ],
   declarations: [
