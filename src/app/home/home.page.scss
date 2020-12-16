@@ -22,6 +22,8 @@ ion-content {
   .cart-items-container {
     height: 300px;
     overflow: auto;
+    border: 1px solid #aaa;
+    margin-top: 80px;
   }
 
   .list-items-container {

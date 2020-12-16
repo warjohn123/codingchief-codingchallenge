@@ -45,4 +45,26 @@ export class HomePage {
 
   constructor() {}
 
+  addItem(item) {
+    this.cartItems.push({
+      listItem: item,
+      quantity: 1
+    });
+  }
+  
+
+  get cartItemsLength() {
+    let length = 0;
+
+    this.cartItems.map( item => {
+      length += item.quantity;
+    })
+
+    return length;
+  }
+
+  deleteItem(index) {
+    this.cartItems.splice(index, 1);
+  }
+
 }

@@ -1,4 +1,19 @@
 <div class="cart-item">
 
-    
+    <img [src]="cartItem.listItem.image">
+
+    <div class="title-container">
+        <div class="title">{{cartItem.listItem.title}}</div>
+        <div class="subtitle">{{cartItem.listItem.subTitle}}</div>
+    </div>
+
+    <div class="amount">$ {{cartItem.listItem.amount * cartItem.quantity}}</div>
+
+    <div>
+        <input type="number" min="1" [(ngModel)]="cartItem.quantity">
+    </div>
+
+    <div>
+        <ion-icon name="trash" (click)="delete()"></ion-icon>
+    </div>
 </div>

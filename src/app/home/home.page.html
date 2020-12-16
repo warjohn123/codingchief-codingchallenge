@@ -10,15 +10,15 @@
   
   <div class="cart-container">
     <ion-icon name="cart" (click)="isCartOpened = !isCartOpened"></ion-icon>
-    <ion-badge color="primary">3</ion-badge>
+    <ion-badge color="primary">{{cartItemsLength}}</ion-badge>
     <span class="amount">
       $5,000
     </span>
   </div>
 
   <div class="cart-items-container" *ngIf="isCartOpened">
-    <div *ngFor="let cartItem of cartItems">
-      <app-cart-item [cartItem]="cartItem"></app-cart-item>
+    <div *ngFor="let cartItem of cartItems; let i = index">
+      <app-cart-item (deleteItem)="deleteItem()" [index]="i" [cartItem]="cartItem"></app-cart-item>
     </div>
   </div>
 
@@ -28,7 +28,7 @@
         <ion-col size="3" *ngFor="let item of listItems">
           <div class="image-container">
             <img [src]="item.image" class="list-item-img">
-            <ion-icon name="add-circle"></ion-icon>
+            <ion-icon name="add-circle" (click)="addItem(item)"></ion-icon>
           </div>
         </ion-col>
       </ion-row>
